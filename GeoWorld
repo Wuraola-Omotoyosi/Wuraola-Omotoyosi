@@ -1,0 +1,160 @@
+Geoworld 
+# Create a game that asks the user to guess a rock or a mineral based on the clues given. Give them three tries to get it right. If they get it right, congratulate them. If they get it wrong, tell them what the answer is.
+
+# #Clues to be given will be
+# #1.grain Size
+# #2.silica content
+# #3.color
+# #4.grain shape
+# import random
+
+print('Welcome to the Geoworld Rock Quiz Game!')
+print()
+print(input('Press Enter to start.'))
+print()
+print('I have an igneous rock in mind, you will be given several clues to guess the rock.')
+print()
+# print(input('Press Enter for more instructions:'))
+# print()
+# print('Here are your clues: ')
+# print()
+# #Ultramafic rocks: These contain very low silica content (less than 45%). They are rich in iron and magnesium. Examples include peridotite and komatite.
+# #Mafic rocks: These have moderate silica content (45-55%). They are also rich in iron and magnesium. Basalt and gabbro are common mafic rocks1.
+# #Intermediate rocks: These fall between mafic and felsic compositions (55-65% silica). Andesite is a well-known intermediate rock1.
+# #Felsic rocks: These have high silica content (more than 65%). They are rich in potassium, sodium, and aluminum. Granite and rhyolite are examples of felsic rocks
+
+
+# # rock_list = ['Ultramafic ', 'Mafic ', 'Intermediate ' , 'Felsic ']
+# # #computer_choice = random.choice(rock_list)
+# # computer_choice = random.randint(1,4)
+
+# # computer_choice = "Ultramafic"
+# # ultramafic_rocks = ['peridotite', 'komatiite', 'lamprophyres' 'Serpentine' ]
+# # mafic_rocks = ['basalt', 'gabbro']
+# # print('1. silica content < 45%')
+# # print()
+# # print('2. rich in Fe and Mg')
+# # print()
+# # print('3. Dark in colour')
+# # print()
+# # user_choice = print(input('What category of igneous rocks does this rock  belong to? [state if, ultramafic, mafic, intermediate, or felsic]: '))
+# # if user_choice == computer_choice:
+# #   print('Congratulations! You guessed the rock correctly!')
+# # elif computer_choice == "Ultramafic" and user_choice == "Mafic" or 'Intermediate' or 'Felsic':
+# #   print('Try again!')
+
+# #elif computer_choice == "Mafic" or computer_choice == "Intermediate" or computer_choice == "Felsic":
+#     #print('You guessed wrong. The answer was', computer_choice) 
+#   #else:
+#     #print('Invalid input. Please try again.')
+# # if user_choice == computer_choice:
+# #   print('Congratulations! You guessed the rock correctly!')  elif computer_choice == "Mafic" or computer_choice == "Intermediate" or computer_choice == "Felsic":
+# # if user_choice == computer_choice:
+# #   print('Congratulations! You guessed the rock correctly!')
+  
+# #print('1. silica content 45% - 55%')
+# #print()
+# #print('2. rich in Fe and Mg')
+# #print()
+# #print('3. Dark in colour')
+# #print()
+
+# #print('1. silica content 55% - 65%')
+# #print()
+# #print('2. roughly-equal amounts of light and dark minerals')
+# #print()
+# #print('3. Dark in colour')
+# #print()
+
+
+
+# import random
+
+# rock_list = ['Ultramafic', 'Mafic', 'Intermediate', 'Felsic']
+# computer_choice = random.choice(rock_list)
+# # computer_choice = "Ultramafic"
+
+# ultramafic_rocks = ['peridotite', 'komatiite', 'lamprophyres', 'Serpentine']
+# mafic_rocks = ['basalt', 'gabbro']
+
+# print('1. silica content < 45%')
+# print()
+# print('2. rich in Fe and Mg')
+# print()
+# print('3. Dark in colour')
+# print()
+
+
+# for rock in rock_list:
+#   print (rock)
+# print()
+# user_choice = input('What category of igneous rocks does this rock belong to?: ')
+# if user_choice.lower() == computer_choice.lower():
+#     print('Congratulations! You guessed the rock correctly!')
+# elif computer_choice == "Ultramafic" and (user_choice.lower() == "Mafic" or user_choice.lower() == "Intermediate" or user_choice.lower() == "Felsic"):
+#     print('Try again!')
+# else:
+#     print('invalid category')
+
+
+
+
+
+
+
+
+
+import random  # Importing the random module
+
+rock_list = ['Ultramafic', 'Mafic', 'Intermediate', 'Felsic']
+computer_choice = random.choice(rock_list)
+if computer_choice == "Ultramafic":
+  print('1. silica content < 45%')
+  print()
+  print('2. rich in Fe and Mg')
+  print()
+  print('3. Dark in colour')
+  print()
+elif computer_choice == "Mafic":
+    print('1. silica content 45% - 55%')
+    print()
+    print('2. rich in Fe and Mg')
+    print()
+    print('3. Dark in colour')
+    print()
+elif computer_choice == "Intermediate":
+    print('1. silica content 55% - 65%')
+    print()
+    print('2. roughly-equal amounts of light and dark minerals')
+    print()
+    print('3. light/dark in colour')
+    print()
+else:
+   print('1. silica content > 65%', '2. low % of Fe and Mg,' '3. Light in color')
+    # #print('2. roughly-equal amounts of light and dark minerals')
+    # #print()
+    # #print('3. Dark in colour')
+for rock in rock_list:
+    print(rock)
+print()
+
+while True:
+    user_choice = input('What category of igneous rocks does this rock belong to?: ').lower()
+
+    if user_choice not in [rock.lower() for rock in rock_list]:
+        print("Invalid Input, please choose from the list")
+        continue
+
+    if computer_choice.lower() == user_choice:
+        print("Correct!")
+        break  # Exit the loop if the user guessed correctly
+    elif computer_choice == "Ultramafic":
+        print("Do better")
+    elif computer_choice == "Mafic":
+        print("Do better" if user_choice in ["intermediate", "felsic"] else "That is far")
+    elif computer_choice == "Intermediate":
+        print("Do better" if user_choice == "felsic" else "That is far")
+    elif computer_choice == "Felsic":
+        print("That is far")
+    else:
+        print("Try Again!")
